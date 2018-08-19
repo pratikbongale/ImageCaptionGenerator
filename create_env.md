@@ -26,10 +26,10 @@ $ deactivate
 
 ## Anaconda python
 
-# reference
+### references
 [Install anaconda python on ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-the-anaconda-python-distribution-on-ubuntu-16-04)
 
-# setup anaconda
+### setup anaconda
 ```
 $ cd /tmp
 $ curl -O https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
@@ -39,44 +39,55 @@ $ source ~/.bashrc
 $ conda list
 ```
 
-# create environment
+### create environment
 ```
 $ conda search "^python"	// check versions available
 $ ls -ls /usr/bin/python* 	// check versions available
 $ conda create --name my_env python=3.6
 ```
 
-# activate
+### activate
 ```
 $ source activate my_env
 ```
 
-# deactivate
+### deactivate
 ```
 $ source deactivate
 ```
 
-# see all environments in conda
+### see all environments in conda
 ```
 $ conda info --envs
 ```
 
-# install new package
+### install new package
 ```
 $ conda install --name my_env35 numpy
 ```
 
-# remove an venv
+### remove an venv
 ```
 $ conda remove --name my_env35 --all
 ```
 
-# update conda(commanline utility for Anaconda)
+### update conda(commanline utility for Anaconda)
 ```
 $ conda update conda
 ```
 
-# update anaconda
+### update anaconda
 ```
 $ conda update anaconda
 ```
+
+### update a package with pip
+```
+$ pip install Keras --upgrade
+```
+
+### list outdated conda packages which will be updated by conda update
+```
+$ conda search --outdated
+$ conda update --all
+``` 
