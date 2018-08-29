@@ -71,7 +71,7 @@ if __name__ == '__main__':
     # test 1
     dir_abs = '/home/pratik/Desktop/Projects/ImageCaptionGenerator/Dataset/Flickr8k_Dataset/Flicker8k_Dataset'
     dir_rel = 'Dataset/Flickr8k_Dataset/Flicker8k_Dataset'
-    dir_tmp = 'Dataset/Flickr8k_Dataset/Flicker8k_Tmp'
+    dir_tmp = 'Dataset/Flicker8k_Tmp/photos'
     features_dict = extract_features(dir_tmp)
     assert '989851184_9ef368e520' in features_dict
 

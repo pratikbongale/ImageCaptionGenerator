@@ -44,3 +44,88 @@ features = model.predict(image, verbose=0)
 **reshape((1, height, width, channels))** shape of one image is `(height, width, channels)`, if we want to process a batch of images we use additional dimension `(samples, size1,size2,channels)` 
 
 **preprocess_input** Some models use images with values ranging from 0 to 1. Others from -1 to +1. Others use the "caffe" style, that is not normalized, but is centered.
+
+-----------------
+string.join(iterable)
+returns a string concatenated with the elements of an iterable separated by arg string used to make the call.
+
+example:
+```python
+numList = ['1', '2', '3', '4']
+seperator = ', '
+print(seperator.join(numList))
+```
+------------------
+have a default value if something doesnt exists in a dictionary
+```python
+from collections import defaultdict
+arr = ['a','b','c','d']
+
+d = defaultdict()
+for i, ele in enumerate(arr):
+    d[i] = ele
+
+```
+-------------------
+get rid of punctuations in a string
+```python
+import string
+
+text = "Hi! I am mack, I am awesome;"
+# make a translation table using the string datatype "str"
+tab = str.maketrans('', '', string.punctuation)
+desc = [w.translate(tab) for w in text]
+' '.join(desc)  # join desc using spaces
+```            
+
+The first and second arguments should actually give the mappings
+whatever is in the third argument is mapped to None
+
+```python
+# first string
+firstString = "abc"
+secondString = "ghi"
+thirdString = "ab"
+
+string = "abcdef"
+translation = string.maketrans(firstString, secondString, thirdString)
+
+# translate string
+print("Translated string:", string.translate(translation))  # prints idef
+```
+--------------------
+using a tokenizer - unknown words are skipped
+```python
+from keras.preprocessing.text import Tokenizer
+tok = Tokenizer()
+tok.fit_on_texts(["this comment is not toxic"]) 
+print(tok.texts_to_sequences(["this comment is not toxic"])) 
+print(tok.texts_to_sequences(["this very long comment is not toxic"]))
+```
+output:
+```
+Using TensorFlow backend.
+[[1, 2, 3, 4, 5]]
+[[1, 2, 3, 4, 5]]
+```
+---------------------------
+Difference between `__init__` and `__call__`
+
+```python
+class Foo:
+    def __init__(self, a, b, c):
+        # initialize a newly created object
+        pass
+
+x = Foo(1, 2, 3) # __init__
+
+class Foo:
+    def __call__(self, a, b, c):
+        # function call "operator"
+        pass
+
+x = Foo()
+x(1, 2, 3) # __call__
+```
+
+
